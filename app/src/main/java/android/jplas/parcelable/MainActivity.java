@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         String nama = inputNama.getText().toString();
         String email = inputEmail.getText().toString();
         int nomor = Integer.parseInt(inputNomor.getText().toString());
+        biodata bio = new biodata(nama,email,nomor);
+        Intent data = new Intent(this, biodata.class);
+        data.putExtra("BIODATA",bio);
+        startActivity(data);
         Intent intent =  new Intent(this, DisplayActivity.class);
         startActivity(intent);
     }
