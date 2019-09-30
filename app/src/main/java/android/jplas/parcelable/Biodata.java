@@ -3,32 +3,32 @@ package android.jplas.parcelable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class biodata implements Parcelable {
+public class Biodata implements Parcelable {
     private String nama;
     private String email;
     private int nomor;
 
-    public biodata(String nama, String email, int nomor) {
+    public Biodata(String nama, String email, int nomor) {
         this.nama = nama;
         this.email = email;
         this.nomor = nomor;
     }
 
-    protected biodata(Parcel in) {
+    protected Biodata(Parcel in) {
         nama = in.readString();
         email = in.readString();
         nomor = in.readInt();
     }
 
-    public static final Creator<biodata> CREATOR = new Creator<biodata>() {
+    public static final Creator<Biodata> CREATOR = new Creator<Biodata>() {
         @Override
-        public biodata createFromParcel(Parcel in) {
-            return new biodata(in);
+        public Biodata createFromParcel(Parcel in) {
+            return new Biodata(in);
         }
 
         @Override
-        public biodata[] newArray(int size) {
-            return new biodata[size];
+        public Biodata[] newArray(int size) {
+            return new Biodata[size];
         }
     };
 

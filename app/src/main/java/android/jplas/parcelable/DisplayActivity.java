@@ -15,15 +15,15 @@ public class DisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
-        biodata bio = getIntent().getParcelableExtra("BIODATA");
+        Biodata bio = getIntent().getParcelableExtra("BIODATA");
 
-        nameOutput = findViewById(R.id.nameText);
-        emailOutput = findViewById(R.id.emailText);
-        numberOutput = findViewById(R.id.numberText);
+        nameOutput = findViewById(R.id.textName);
+        emailOutput = findViewById(R.id.textEmail);
+        numberOutput = findViewById(R.id.textNumber);
 
-        nameOutput.setText(bio.getNama());
-        emailOutput.setText(bio.getEmail());
-        numberOutput.setText(""+bio.getNomor());
+        nameOutput.setText(""+bio.getNama());
+        emailOutput.setText(""+bio.getEmail());
+        numberOutput.setText(String.valueOf(bio.getNomor()));
     }
 
 }

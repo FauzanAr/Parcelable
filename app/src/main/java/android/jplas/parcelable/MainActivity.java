@@ -22,16 +22,14 @@ public class MainActivity extends AppCompatActivity {
         inputNomor = findViewById(R.id.numberText);
     }
 
-
     public void displayActivity(View view) {
         String nama = inputNama.getText().toString();
         String email = inputEmail.getText().toString();
         int nomor = Integer.parseInt(inputNomor.getText().toString());
-        biodata bio = new biodata(nama,email,nomor);
-        Intent data = new Intent(this, biodata.class);
-        data.putExtra("BIODATA",bio);
-        startActivity(data);
+        Biodata bio = new Biodata(nama,email,nomor);
         Intent intent =  new Intent(this, DisplayActivity.class);
+        intent.putExtra("BIODATA",bio);
         startActivity(intent);
+
     }
 }
